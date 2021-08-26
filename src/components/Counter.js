@@ -1,16 +1,10 @@
 import { useCallback, useEffect, useState } from 'react'
+import useCounter from '../hooks/useCounter'
 
 export function Counter() {
-  const [counter1, setCounter1] = useState(0)
-  const [counter2, setCounter2] = useState(0)
+  const { counter: counter1, increaseCounter: increaseCounter1 } = useCounter()
+  const { counter: counter2, increaseCounter: increaseCounter2 } = useCounter()
   const [counter1DidChange, setCounter1DidChange] = useState(false)
-
-  const increaseCounter1 = () => {
-    setCounter1((prevState) => prevState + 1)
-  }
-  const increaseCounter2 = () => {
-    setCounter2((prevState) => prevState + 1)
-  }
 
   const doSomething = () => {
     if (counter1 >= 10) {
