@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 
 export function Counter() {
   const [counter1, setCounter1] = useState(0)
@@ -12,16 +12,16 @@ export function Counter() {
     setCounter2((prevState) => prevState + 1)
   }
 
-  const doSomething = () => {
+  const doSomething = useCallback(() => {
     if (counter1 >= 10) {
       setCounter1DidChange(true)
     }
     console.log('running doSomething')
-  }
+  }, [counter1])
 
   useEffect(() => {
     doSomething()
-  }, [doSomething]) // The 'doSomething' function makes the dependencies of useEffect Hook (at line 24) change on every render. Move it inside the useEffect callback.
+  }, [doSomething])
 
   return (
     <div>
