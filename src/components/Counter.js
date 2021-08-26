@@ -9,9 +9,7 @@ export function Counter() {
 
   useEffect(() => {
     console.log('component did mount')
-  }, [])
 
-  useEffect(() => {
     return () => {
       console.log('component did unmount')
     }
