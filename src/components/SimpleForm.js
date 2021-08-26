@@ -1,5 +1,7 @@
 import { useRef } from 'react'
 
+const isEmpty = (value) => value.trim() === ''
+
 export const SimpleForm = () => {
   const emailRef = useRef()
   const passwordRef = useRef()
@@ -8,6 +10,9 @@ export const SimpleForm = () => {
     event.preventDefault()
     const email = emailRef.current.value.trim()
     const password = passwordRef.current.value.trim()
+    if (isEmpty(email) || isEmpty(password)) {
+      return
+    }
     console.log(email)
     console.log(password)
   }
