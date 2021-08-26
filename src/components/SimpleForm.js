@@ -6,6 +6,10 @@ export const SimpleForm = () => {
 
   const submitHandler = (event) => {
     event.preventDefault()
+    const email = emailRef.current.value.trim()
+    const password = passwordRef.current.value.trim()
+    console.log(email)
+    console.log(password)
   }
 
   return (
