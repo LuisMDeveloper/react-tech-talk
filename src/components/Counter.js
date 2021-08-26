@@ -11,6 +11,12 @@ export function Counter() {
     console.log('component did mount')
   }, [])
 
+  useEffect(() => {
+    return () => {
+      console.log('component did unmount')
+    }
+  }, [])
+
   return (
     <div>
       <h1>{counter1}</h1>
