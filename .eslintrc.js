@@ -28,5 +28,6 @@ module.exports = {
     'react/react-in-jsx-scope': RULES.OFF,
     'react/prop-types': RULES.OFF,
     'no-unused-vars': RULES.WARN,
+    'react/jsx-key': RULES.WARN,
   },
 }
