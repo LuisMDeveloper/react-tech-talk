@@ -21,7 +21,7 @@ export function Counter() {
 
   useEffect(() => {
     doSomething()
-  }, [counter1]) // React Hook useEffect has a missing dependency: 'doSomething'.
+  }, [doSomething]) // The 'doSomething' function makes the dependencies of useEffect Hook (at line 24) change on every render. Move it inside the useEffect callback.
 
   return (
     <div>
