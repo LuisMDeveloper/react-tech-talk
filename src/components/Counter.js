@@ -12,16 +12,18 @@ export function Counter() {
     setCounter2((prevState) => prevState + 1)
   }
 
-  const doSomething = useCallback(() => {
+  const doSomething = () => {
     if (counter1 >= 10) {
       setCounter1DidChange(true)
     }
     console.log('running doSomething')
-  }, [counter1])
+  }
+
+  const doSomethingCallback = useCallback(doSomething, [counter1])
 
   useEffect(() => {
-    doSomething()
-  }, [doSomething])
+    doSomethingCallback()
+  }, [doSomethingCallback])
 
   return (
     <div>
