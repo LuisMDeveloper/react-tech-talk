@@ -12,11 +12,16 @@ export function Counter() {
     setCounter2((prevState) => prevState + 1)
   }
 
-  useEffect(() => {
+  const doSomething = () => {
     if (counter1 >= 10) {
       setCounter1DidChange(true)
     }
-  }, [counter1])
+    console.log('running doSomething')
+  }
+
+  useEffect(() => {
+    doSomething()
+  }, [counter1]) // React Hook useEffect has a missing dependency: 'doSomething'.
 
   return (
     <div>
