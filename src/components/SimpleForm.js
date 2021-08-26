@@ -14,13 +14,23 @@ export const SimpleForm = () => {
         <label className="form-label" htmlFor="email">
           Email
         </label>
-        <input className="form-control" id="email" type="email" />
+        <input
+          className="form-control"
+          id="email"
+          type="email"
+          ref={emailRef}
+        />
       </div>
       <div className="mb-3">
         <label className="form-label" htmlFor="pass">
           Password
         </label>
-        <input className="form-control" id="pass" type="password" />
+        <input
+          className="form-control"
+          id="pass"
+          type="password"
+          ref={passwordRef}
+        />
       </div>
       <button className="btn btn-primary" type="submit">
         Login
