@@ -1,4 +1,9 @@
+import { useRef } from 'react'
+
 export const SimpleForm = () => {
+  const emailRef = useRef()
+  const passwordRef = useRef()
+
   const submitHandler = (event) => {
     event.preventDefault()
   }
