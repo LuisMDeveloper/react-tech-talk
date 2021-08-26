@@ -12,7 +12,7 @@ export function Counter() {
     if (counter1 >= 10) {
       setCounter1DidChange(true)
     }
-  }, [counter1, setCounter1DidChange])
+  }, [counter1])
 
   return (
     <div>
