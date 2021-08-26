@@ -5,8 +5,8 @@ export const ExpenseList = (props) => {
     <div className="card">
       <div className="card-header">List</div>
       <div className="card-body">
-        {props.items.map((item, index) => (
-          <ExpenseItem key={index} title={item.title} price={item.price} />
+        {props.items.map((item) => (
+          <ExpenseItem key={item.id} title={item.title} price={item.price} />
         ))}
       </div>
     </div>
